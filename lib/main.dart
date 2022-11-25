@@ -13,8 +13,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Pésa',
+      title: 'Pesa',
       theme: ThemeData(
+          //theming
           primarySwatch: Colors.green,
           scaffoldBackgroundColor: const Color(0xff121212),
           textTheme: const TextTheme(

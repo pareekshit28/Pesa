@@ -90,7 +90,7 @@ class NewsScreen extends StatelessWidget {
                                     snapshot.data["articles"][index]
                                             ["publishedAt"]
                                         .toString()
-                                        .split("T")[0],
+                                        .split("T")[0], //get date
                                     style: const TextStyle(
                                       fontSize: 12,
                                     ))

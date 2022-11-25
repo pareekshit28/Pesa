@@ -11,8 +11,8 @@ class InvestScreen extends StatefulWidget {
 class _InvestScreenState extends State<InvestScreen> {
   final investController = TextEditingController();
   final getController = TextEditingController();
-  bool find = false;
-  final focus = FocusNode();
+  bool find = false; //to check if the user has clicked the find button
+  final focus = FocusNode(); //to unfocus the textfield
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -154,6 +154,7 @@ class _InvestScreenState extends State<InvestScreen> {
                       getController.text != "" &&
                       investController.text != "0" &&
                       getController.text != "0") {
+                    //to check if the user has entered a value other than 0
                     setState(() {
                       find = true;
                     });
@@ -184,11 +185,12 @@ class _InvestScreenState extends State<InvestScreen> {
                         List stocks = [];
                         for (var stock in snapshot.data['data']) {
                           if (stock["perChange365d"] > 0) {
+                            //only add stocks with positive return
                             stocks.add(stock);
                           }
                         }
-                        stocks.sort((a, b) =>
-                            b["perChange365d"].compareTo(a["perChange365d"]));
+                        stocks.sort((a, b) => b["perChange365d"].compareTo(a[
+                            "perChange365d"])); //sort the stocks based on the time that it takes to get the desired return
                         return ListView.separated(
                           itemBuilder: (context, index) => Container(
                             width: double.infinity,

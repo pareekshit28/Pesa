@@ -30,8 +30,8 @@ class SpendsScreen extends StatefulWidget {
 
 class _SpendsScreenState extends State<SpendsScreen> {
   final query = SmsQuery();
-  List<Map<String, dynamic>> txns = [];
-  double totalAmountThisMonth = 0;
+  List<Map<String, dynamic>> txns = []; // current month transactions
+  double totalAmountThisMonth = 0; // total amount spent this month
 
   @override
   void initState() {
@@ -44,6 +44,7 @@ class _SpendsScreenState extends State<SpendsScreen> {
             element.body.toString().contains("debited") &&
             element.body.toString().contains("Rs") &&
             element.body.toString().contains("transfer to")) {
+          // filter out irrelevant messages and only get the ones that have been debited
           final id = element.date!.millisecondsSinceEpoch;
           final amount = double.parse(
               element.body.toString().split("Rs")[1].split(" ")[0]);
@@ -51,7 +52,8 @@ class _SpendsScreenState extends State<SpendsScreen> {
           final to =
               element.body.toString().split("transfer to ")[1].split(" Ref")[0];
 
-          totalAmountThisMonth += amount;
+          totalAmountThisMonth +=
+              amount; // add to total amount spent this month
           temp.add({
             "id": id,
             "amount": amount,
@@ -155,6 +157,7 @@ class _SpendsScreenState extends State<SpendsScreen> {
                   double other = 0;
 
                   for (var element in txns) {
+                    // calculate total amount spent on each category
                     switch (element["type"]) {
                       case MerchantType.food:
                         food += element["amount"];

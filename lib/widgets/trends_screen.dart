@@ -222,7 +222,8 @@ class _TrendsScreenState extends State<TrendsScreen> {
                                           color: snapshot.data["data"][index]
                                                       ["pChange"]
                                                   .toString()
-                                                  .contains("-")
+                                                  .contains(
+                                                      "-") //check if the value is negative
                                               ? Colors.red
                                               : Colors.green,
                                         )),
@@ -231,7 +232,8 @@ class _TrendsScreenState extends State<TrendsScreen> {
                                     ),
                                     snapshot.data["data"][index]["pChange"]
                                             .toString()
-                                            .contains("-")
+                                            .contains(
+                                                "-") //check if the value is negative
                                         ? const Icon(Icons.arrow_downward,
                                             color: Colors.red)
                                         : const Icon(Icons.arrow_upward,
@@ -306,7 +308,8 @@ class _TrendsScreenState extends State<TrendsScreen> {
                                                       [cryptos[index]]["change"]
                                                       ["percent"]
                                                   .toString()
-                                                  .contains("-")
+                                                  .contains(
+                                                      "-") //check if the value is negative
                                               ? Colors.red
                                               : Colors.green,
                                         )),
@@ -316,7 +319,8 @@ class _TrendsScreenState extends State<TrendsScreen> {
                                     snapshot.data["data"][cryptos[index]]
                                                 ["change"]["percent"]
                                             .toString()
-                                            .contains("-")
+                                            .contains(
+                                                "-") //check if the value is negative
                                         ? const Icon(Icons.arrow_downward,
                                             color: Colors.red)
                                         : const Icon(Icons.arrow_upward,

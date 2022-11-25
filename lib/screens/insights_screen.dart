@@ -101,7 +101,7 @@ class InsightsScreen extends StatelessWidget {
                             style:
                                 TextStyle(color: Colors.white, fontSize: 16)),
                         const Spacer(),
-                        Text("₹${data["Food"]}",
+                        Text("₹${data["Food"]}", //amount spent on food
                             style: const TextStyle(
                                 color: Colors.white, fontSize: 16)),
                       ],
@@ -131,7 +131,7 @@ class InsightsScreen extends StatelessWidget {
                             style:
                                 TextStyle(color: Colors.white, fontSize: 16)),
                         const Spacer(),
-                        Text("₹${data["Shopping"]}",
+                        Text("₹${data["Shopping"]}", //amount spent on shopping
                             style: const TextStyle(
                                 color: Colors.white, fontSize: 16)),
                       ],
@@ -161,7 +161,7 @@ class InsightsScreen extends StatelessWidget {
                             style:
                                 TextStyle(color: Colors.white, fontSize: 16)),
                         const Spacer(),
-                        Text("₹${data["Travel"]}",
+                        Text("₹${data["Travel"]}", //amount spent on travel
                             style: const TextStyle(
                                 color: Colors.white, fontSize: 16)),
                       ],
@@ -191,7 +191,8 @@ class InsightsScreen extends StatelessWidget {
                             style:
                                 TextStyle(color: Colors.white, fontSize: 16)),
                         const Spacer(),
-                        Text("₹${data["Entertainment"]}",
+                        Text(
+                            "₹${data["Entertainment"]}", //amount spent on entertainment
                             style: const TextStyle(
                                 color: Colors.white, fontSize: 16)),
                       ],
@@ -221,7 +222,8 @@ class InsightsScreen extends StatelessWidget {
                             style:
                                 TextStyle(color: Colors.white, fontSize: 16)),
                         const Spacer(),
-                        Text("₹${data["Education"]}",
+                        Text(
+                            "₹${data["Education"]}", //amount spent on education
                             style: const TextStyle(
                                 color: Colors.white, fontSize: 16)),
                       ],
@@ -251,7 +253,8 @@ class InsightsScreen extends StatelessWidget {
                             style:
                                 TextStyle(color: Colors.white, fontSize: 16)),
                         const Spacer(),
-                        Text("₹${data["Other"]}",
+                        Text(
+                            "₹${data["Other"]}", //amount spent on other expenses
                             style: const TextStyle(
                                 color: Colors.white, fontSize: 16)),
                       ],
